@@ -21,33 +21,76 @@
   flex-wrap: wrap;
 } */
 
-.container {
+/* .container {
   width: 3600px;
   height: 3600px;
   background-image: "../images/01.jpeg";
   background-size: 300px 300px;
   background-repeat: repeat;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* img {
-  margin: 5px;
-  width: 200px;
-  height: 200px;
-} */
-/* 
-#gallery {
+body {
+  overflow-y: hidden;
+}
+
+.container {
   scroll-snap-type: x mandatory;
-  overflow-x: scroll;
   display: flex;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  /* display: block; */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.child {
+  scroll-snap-align: start;
+  /* border-right: 1px solid white; */
+  /* padding: 1rem; */
+  text-align: center;
+  position: relative;
+  min-width: 100vw;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.half {
+  height: 50vh;
+  width: 100vw;
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.signature {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  width: 500px;
   height: 500px;
-  width: 100px;
-  border: 2px solid red;
+  margin-top: -250px;
+  margin-left: -250px;
+  transition: all 0.25s ease;
+  pointer-events: none;
 }
 
-#gallery img {
-  scroll-snap-align: center;
+.signature:hover {
+  filter: drop-shadow(0px 0px 4px #eeeeee85);
+  mix-blend-mode: difference;
 }
 
-img {
-  display: block;
-} */
+.top {
+  object-position: center bottom;
+}
+
+.bottom {
+  object-position: center top;
+}

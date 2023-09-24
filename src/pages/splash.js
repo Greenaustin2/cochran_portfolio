@@ -1,8 +1,6 @@
 const splash = `
-<div id="gallery">
-<img src="./images/01.jpeg" />
-<img src="./images/03.jpeg" />
-<img src="./images/02.jpeg" />
-</div>`;
+<img src="../../images/signature.png" class="signature">
+<div class="container half top"></div>
+    <div class="container half bottom"></div>`;
 
 export default splash;

@@ -1,5 +1,6 @@
 const container = document.querySelectorAll(".container");
 
+//generates list of images paths at random
 function randomImageArray(divIdentifier) {
   var randoms = new Set();
   while (randoms.size < 9) {
@@ -13,19 +14,20 @@ function randomImageArray(divIdentifier) {
   return finalArray;
 }
 
+//generate list of paths for top and bottom image arrays
 const imagesTop = randomImageArray("top");
 const imagesBottom = randomImageArray("bottom");
 
-//appends and prepends repeat elements for the infinite gallery illusion loop points
+//appends and prepends repeat image paths for the infinite gallery illusion loop points
 imagesBottom.push(imagesBottom[0], imagesBottom[1]);
 imagesBottom.unshift(imagesBottom[7], imagesBottom[8]);
 imagesTop.push(imagesTop[0], imagesTop[1]);
 imagesTop.unshift(imagesTop[7], imagesTop[8]);
 
+//array of image path arrays
 const imageArrays = [imagesTop, imagesBottom];
 
-const varToString = (varObj) => Object.keys(varObj)[0];
-
+//loads images into the DOM byu appending to class container div
 function loadImages(container, imageArrays) {
   var x = 0;
   container.forEach((item) => {
@@ -40,8 +42,6 @@ function loadImages(container, imageArrays) {
     x += 1;
   });
 }
-
-function appendPrependImages(container, imageArrays) {}
 
 let top = document.querySelector(".top");
 let bottom = document.querySelector(".bottom");
